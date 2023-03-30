@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
-    header("location:func2.php");
+    header("location:docter_logged.php");
     exit();
 }
 include 'dbconfig.php';

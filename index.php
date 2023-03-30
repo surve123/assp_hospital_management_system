@@ -99,7 +99,7 @@ function checklen()
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">Register as Patient</h3>
-                                <form method="post" action="func2.php">
+                                <form method="post" action="patient_logged.php">
                                 <div class="row register-form">
                                     
                                     <div class="col-md-6">
@@ -149,7 +149,7 @@ function checklen()
                             
                             <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <h3  class="register-heading">Login as Doctor</h3>
-                                <form method="post" action="func1.php">
+                                <form method="post" action="docter_logged.php">
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -170,7 +170,7 @@ function checklen()
 
                             <div class="tab-pane fade show" id="admin" role="tabpanel" aria-labelledby="profile-tab">
                                 <h3  class="register-heading">Login as Admin</h3>
-                                <form method="post" action="func2.php">
+                                <form method="post" action="admin_logged.php">
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">

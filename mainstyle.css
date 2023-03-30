@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+.linkbutton{
+    color: white;
+    background-color: #b518dc;
+    text-align: center;
+    padding: 15px 28px ;
+    font-size:14px;
+    font-family: ui-rounded;
+    border: none;
+    margin: -4px;
+   border-radius: 28px;
+   cursor: pointer;
+  }
+  
+  nav{
+    background-color: #333;
+    overflow: hidden;
+    margin: 0px 0px;
+  }
+  nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  nav li{
+    float: right;
+  }
+  nav li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+  }
+  nav label{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    float: left;
+  }
+  nav li a:hover{
+    background-color: #111;
+  }
+ 
+  .bodybackground{
+    margin: 0px 0px;
+    padding: 18px 46px ;
+  }
+  .footerbackground{
+    margin: -7px -8px;
+    padding: 7px 0px ;
+  }
+  table {
+    border-collapse: collapse;
+    font-family: cursive;
+    width: 100%;
+    box-sizing: border-box;
+}
+td,th{
+    /* border: 1px solid #ddd; */
+    padding: 4px;
+    font-size: 16px;
+}
+tr:hover{
+    background-color: #ddd;
+}
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  font-weight: bold;
+  background-color: midnightblue;
+  color: white;
+  /* border-bottom: 1px solid black; */
+  font-size: 20px;
+  /* border-top: 1px solid black; */
+}
+
+td {
+  padding: 9px 8px;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+.Active {
+  background-color: #06d506;
+  margin: -4px 0px;
+  padding: 7px 2px;
+  color: white;
+  border-radius: 12px;
+}
+.prescribed {
+  background-color: #0e109c;
+  margin: -4px 0px;
+  padding: 7px 2px;
+  color: white;
+  border-radius: 12px;
+}
+
+.cancelled {
+  background-color: #f30606;
+  margin: -4px 0px;
+  padding: 7px 2px;
+  color: white;
+  border-radius: 12px;
+}
+.prescribe {
+  background-color: blue;
+  margin: -4px 9px;
+  padding: 7px 15px;
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+.prescribe:hover {
+  border: 1px solid black;
+}
+
+.cancel {
+  background-color: #f30606;
+  margin: -4px -16px;
+  padding: 7px 23px;
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+.cancel:hover {
+  border: 1px solid black;
+}
+
+.prescibe_button{
+  background-color: #ddd;
+  margin: -4px 9px;
+  padding: 7px 15px;
+  color: black;
+  border-radius: 12px;
+  text-decoration: none;
+}

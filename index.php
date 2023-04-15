@@ -1,208 +1,781 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-	<title>HMS</title>
-	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-<link rel="stylesheet" type="text/css" href="style1.css">
-<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
-<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            overflow: scroll;
+            align-content: flex-start;
+        }
 
-<link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        nav {
+            display: flex;
+            background-color: #007bff;
+            overflow: hidden;
+            margin: 0px 0px;
+            width: 100%;
+            height: fit-content;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-content: center;
+        }
 
-<style >
-     .form-control {
-    border-radius: 0.75rem;
-    }
-    
-</style>
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
 
-<script>
-    var check = function() {
-  if (document.getElementById('password').value ==
-    document.getElementById('cpassword').value) {
-    document.getElementById('message').style.color = '#5dd05d';
-    document.getElementById('message').innerHTML = 'Matched';
-  } else {
-    document.getElementById('message').style.color = '#f55252';
-    document.getElementById('message').innerHTML = 'Not Matching';
-  }
+        nav li {
+            float: left;
+        }
+
+        nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 10px;
+            text-decoration: none;
+            background-color: transparent;
+            border: none;
+        }
+
+        nav label {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            float: left;
+
+        }
+
+        nav li a:hover {
+            /* background-color: #111; */
+            font-weight: bold;
+        }
+
+        select {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            background-color: transparent;
+            border: none;
+            outline: none;
+        }
+
+        select option:disabled {
+            display: none;
+        }
+
+        select option {
+            color: white;
+            background-color: #007bff;
+
+        }
+
+        .icon {
+            width: 3%;
+            height: 100%;
+            padding: 5px;
+        }
+
+        .icon img {
+            height: 33px;
+            width: 33px;
+        }
+
+        .imagecontainer_main {
+            width: 100%;
+            height: 60vh;
+        }
+
+        .imagecontainer_main img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .firstcard {
+            width: 90%;
+            height: fit-content;
+            /* border: 1px solid black; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .headerdiv {
+            width: 80%;
+            height: fit-content;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .headerdiv_icon {
+            width: 50%;
+            height: 35vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-direction: column;
+            align-content: center;
+            border-bottom: 1px solid black;
+        }
+
+        .headerdiv_icon img {
+            width: 50%;
+            height: 80%;
+        }
+
+        .headerdiv_name {
+            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-direction: column;
+            align-content: flex-start;
+            border-bottom: 1px solid black;
+        }
+
+        .headerdiv_name h1 {
+            font-size: 45px;
+        }
+
+        .headerdiv_content {
+            width: 100%;
+            height: fit-content;
+            padding: 10px;
+        }
+
+        .secondcard,
+        .department_cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            width: 85%;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            height: 60vh;
+            box-shadow: 0px 10px 10px 10px gray;
+            padding: 10px;
+        }
+
+        .department_cards {
+            height: 75vh;
+        }
+
+        .secondcard_image-size {
+            width: 30%;
+            height: 100%;
+        }
+
+        .secondcard_text {
+            display: flex;
+            width: 66%;
+            text-align: center;
+            flex-direction: column;
+            align-content: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .secondcard_text2 {
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .Aboutus_text {
+            display: flex;
+            width: 66%;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .Aboutus_text2 {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .department_menu {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            width: 50%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        .department_menu a {
+            width: 50%;
+            display: block;
+            border: 1px solid;
+            padding: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .secondcard_text h4 {
+            margin-top: 20px;
+        }
+
+        .secondcard_image-size img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .contactus {
+            margin-top: 35px;
+            height: fit-content;
+            display: flex;
+            width: 85%;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            /* border: 1px solid; */
+            box-shadow: 0px 10px 10px 10px gray;
+        }
+
+        .contactheading {
+            font-size: 20px;
+            width: 100%;
+            height: 15vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-content: center;
+        }
+
+        .contactform,
+        form {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+        }
+
+        /* .contactform form {
+            width: 100%;
+        } */
+
+        .contactpersonal {
+            display: flex;
+            width: 50%;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            flex-direction: column;
+            align-items: flex-start;
+            align-content: center;
+        }
+
+        .contactpersonal label,
+        .contactmessage label {
+            margin-bottom: 3px;
+        }
+
+        .contactpersonal input {
+            margin-bottom: 13px;
+            width: 60%;
+            font-size: 16px;
+            outline: none;
+            padding: 5px;
+        }
+
+        .contactmessage {
+            display: flex;
+            width: 50%;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            align-content: center;
+
+        }
+
+        .contactmessage textarea {
+            resize: none;
+            padding: 5px;
+            outline: none;
+            font-family: 'Arial';
+            font-size: 16px;
+            line-height: 5px;
+            width: 60%;
+            height: 60%;
+        }
+
+        .contactbtn {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            height: 10vh;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: center;
+        }
+
+        .submit_contact {
+            height: 50%;
+            width: 20%;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 18px;
+        }
+
+        .department_heading {
+            display: flex;
+            width: 100%;
+            height: 15vh;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .department_content {
+            /* border: 1px solid; */
+            width: 70%;
+            padding: 5px 80px;
+            height: 100%;
+            line-height: 30px;
+            font-size: 17px;
+        }
+
+        .deparment_secondary_card {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            height: 57vh;
+        }
+
+        .secondlast {
+            width: 100%;
+            height: 5vh;
+            background-color: gray;
+            margin-top: 10vh;
+        }
+
+        .secondlast a {
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 5px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .pagefooter {
+            display: flex;
+            width: 100%;
+            height: 50vh;
+            /* border: 1px solid; */
+            background-color: black;
+            color: white;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pagefooterbox1,
+        .pagefooterbox2 {
+            width: 40%;
+            /* border: 1px solid; */
+            height: fit-content;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #general,
+        #neurology {
+            flex-direction: row-reverse;
+        }
+
+        .callnow {
+            width: 100%;
+            height: 7vh;
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        @media only screen and (max-width:500px) {
+            .icon {
+                width: 13%;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .imagecontainer_main {
+                height: 40vh;
+            }
+
+            .headerdiv_icon {
+                width: 100%;
+                height: 30vh;
+                border: none;
+            }
+
+            .headerdiv_name {
+                width: 100%;
+                align-content: center;
+                border: none;
+            }
+
+            .headerdiv_name p {
+                text-align: center;
+            }
+
+            .headerdiv {
+                width: 100%;
+            }
+
+            .firstcard {
+                width: 95%;
+            }
+
+            .headerdiv_content {
+                margin-top: 10px;
+            }
+
+            .secondcard,
+            .department_cards,
+
+            .contactus {
+                width: 95%;
+                height: fit-content;
+            }
+
+            .secondcard_image-size {
+                width: 100%;
+                /* width: 100%; */
+            }
+
+            .secondcard_image-size img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .secondcard_text,
+            .Aboutus_text,
+            .deparment_secondary_card,
+            .contactpersonal,
+            .contactmessage {
+                width: 100%;
+                text-align: center;
+                padding: 20px;
+                height: fit-content;
+            }
+
+            .submit_contact {
+                width: 50%;
+            }
+
+            .contactpersonal input,
+            .contactmessage textarea {
+                width: 80%;
+            }
+
+            .department_menu a {
+                width: 100%;
+            }
+
+            .department_content {
+                width: 100%;
+                padding: 5px;
+            }
+
+            .pagefooter {
+                height: fit-content;
+            }
+
+            .pagefooterbox1,
+            .pagefooterbox2 {
+                width: 90%;
+                height: fit-content;
+                justify-content: center;
+                padding: 30px 0px;
+            }
+
+            .callnow {
+                font-size: 15px;
+            }
+.department_menu{
+width:100%;
 }
-
-function alphaOnly(event) {
-  var key = event.keyCode;
-  return ((key >= 65 && key <= 90) || key == 8 || key == 32);
-};
-
-function checklen()
-{
-    var pass1 = document.getElementById("password");  
-    if(pass1.value.length<6){  
-        alert("Password must be at least 6 characters long. Try again!");  
-        return false;  
-  }  
-}
-
-</script>
-
+        }
+    </style>
 </head>
 
-<!------ Include the above in your HEAD tag ---------->
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" >
-    <div class="container">
-
-      <a class="navbar-brand js-scroll-trigger" href="#" style="margin-top: 10px;margin-left:-65px;font-family: 'IBM Plex Sans', sans-serif;"><h4><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp ASSP HOSPITALS</h4></a>
-      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button> -->
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item" style="margin-right: 40px;">
-            <a class="nav-link js-scroll-trigger" href="index.php" style="color: white;font-family: 'IBM Plex Sans', sans-serif;"><h6>HOME</h6></a>
-          </li>
-  
-          <li class="nav-item" style="margin-right: 40px;">
-            <a class="nav-link js-scroll-trigger" href="services.html" style="color: white;font-family: 'IBM Plex Sans', sans-serif;"><h6>ABOUT US</h6></a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="contact.html" style="colyor: white;font-family: 'IBM Plex Sans', sans-serif;"><h6>CONTACT</h6></a>
-          </li>
+    <nav>
+        <div class="icon" id="Home">
+            <img src="image/solidarity.png">
+        </div>
+        <label for="hospital">ASSP Hospital</label>
+        <ul>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#secondcard">About us</a></li>
+            <li><a href="#contactus">Contact us</a></li>
+            <li>
+                <form action="loginpage.php" method="post">
+                    <select name="login" id="login" onchange="this.form.submit()">
+                        <option value="null" disabled selected>Login</option>
+                        <option value="patient">user</option>
+                        <option value="doctor">doctor</option>
+                        <option value="admin">admin</option>
+                    </select>
+                </form>
+            </li>
         </ul>
-      </div>
+    </nav>
+    <div class="callnow">
+        <p>Emergency Toll Free Number    xxx-xxx-xxxx</p>
     </div>
-  </nav>
-
-	
-
-<div class="container register" style="font-family: 'IBM Plex Sans', sans-serif;">
-                <div class="row">
-                    <div class="col-md-3 register-left" style="margin-top: 10%;right: 5%">
-                        <h3>Welcome</h3>
-                        <img src="image/solidarity.png" alt="assp"/>
-                       
-                    </div>
-                    <div class="col-md-9 register-right" style="margin-top: 40px;left: 80px;">
-                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist" style="width: 40%;">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Patient</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Doctor</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#admin" role="tab" aria-controls="admin" aria-selected="false">Receptionist</a>
-                            </li>
-                        </ul>
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h3 class="register-heading">Register as Patient</h3>
-                                <form method="post" action="patient_logged.php">
-                                <div class="row register-form">
-                                    
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control"  placeholder="First Name *" name="fname"  onkeydown="return alphaOnly(event);" required/>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Your Email *" name="email"  />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" id="password" name="password" onkeyup='check();' required/>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <div class="maxl">
-                                                <label class="radio inline"> 
-                                                    <input type="radio" name="gender" value="Male" checked>
-                                                    <span> Male </span> 
-                                                </label>
-                                                <label class="radio inline"> 
-                                                    <input type="radio" name="gender" value="Female">
-                                                    <span>Female </span> 
-                                                </label>
-                                            </div>
-                                            <a href="index1.php">Already have an account?</a>
-                                        </div>
-                                    </div>
-                                
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name *" name="lname" onkeydown="return alphaOnly(event);" required/>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <input type="tel" minlength="10" maxlength="10" name="contact" class="form-control" placeholder="Your Phone *"  />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control"  id="cpassword" placeholder="Confirm Password *" name="cpassword"  onkeyup='check();' required/><span id='message'></span>
-                                        </div>
-                                        <input type="submit" class="btnRegister" name="patsub1" onclick="return checklen();" value="Register"/>
-                                    </div>
-
-                                </div>
-                            </form>
-                            </div>
-
-                            
-                            <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <h3  class="register-heading">Login as Doctor</h3>
-                                <form method="post" action="docter_logged.php">
-                                <div class="row register-form">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="User Name *" name="Username" onkeydown="return alphaOnly(event);" required/>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" name="password" required/>
-                                        </div>
-                                        
-                                        <input type="submit" class="btnRegister" name="docsub1" value="Login"/>
-                                    </div>
-                                </div>
-                            </form>
-                            </div>
-
-
-                            <div class="tab-pane fade show" id="admin" role="tabpanel" aria-labelledby="profile-tab">
-                                <h3  class="register-heading">Login as Admin</h3>
-                                <form method="post" action="admin_logged.php">
-                                <div class="row register-form">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="User Name *" name="username1" onkeydown="return alphaOnly(event);" required/>
-                                        </div>
-                                        
-
-
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" name="password2" required/>
-                                        </div>
-                                        
-                                        <input type="submit" class="btnRegister" name="adsub" value="Login"/>
-                                    </div>
-                                </div>
-                            </form>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
+    <div class="imagecontainer_main">
+        <img src="image/head1.jpeg">
+    </div>
+    <div class="firstcard">
+        <div class="headerdiv">
+            <div class="headerdiv_icon">
+                <img src="image/solidarity1.png" class="icon_image">
             </div>
-    </body>
+            <div class="headerdiv_name">
+                <h1>Assp Hospital</h1>
+                <p>kothrud,pune</p>
+            </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            <div class="secondcard_text">
+                <div style="width: 100%;">
+                    <h4>The pain itself is very important, and it will be followed. For I came to the smallest </h4>
+                </div>
+                <div class="secondcard_text2">
+                    <p>The customer is very happy</p>
+                    <p> Adipisicion will be obtained, but I do</p>
+                    <p>They fall in the same time as labor</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="secondcard" id="secondcard">
+        <div class="secondcard_image-size">
+            <img src="image/hm1.jpeg" alt="">
+        </div>
+        <div class="Aboutus_text">
+            <div style="width: 100%; text-align: center; ">
+                <h1>Departments</h1>
+            </div>
+            <div class="Aboutus_text2">
+                <div class="department_menu">
+                    <a href="#cardiology">Cardiology</a>
+                </div>
+                <div class="department_menu">
+                    <a href="#General">General</a>
+                </div>
+                <div class="department_menu">
+                    <a href="#Neurology">Neurology</a>
+                </div>
+                <div class="department_menu">
+                    <a href="#Pediatrician">Pediatrician</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="department_cards" id="cardiology">
+        <div class="department_heading">
+            <h1>Cardiology</h1>
+        </div>
+        <div class="deparment_secondary_card">
+            <div class="secondcard_image-size">
+                <img src="image/hm3.jpeg" alt="">
+            </div>
+            <div class="department_content">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia in natus perspiciatis hic cumque minus
+                odit tenetur nostrum quas at consectetur ad obcaecati libero eius nemo, ullam harum doloribus sapiente
+                rerum
+                quisquam tempore. Provident error corporis ea officiis asperiores, laboriosam praesentium? Animi ab sed
+                dignissimos ullam non commodi delectus, excepturi necessitatibus labore neque provident quis nulla
+                voluptatem ipsum aut nemo corrupti perferendis vitae. Quis perspiciatis dolore dicta? Ratione provident
+                nemo
+                dolor? Ea voluptates a ab maiores dolor facilis inventore architecto veritatis vitae cum voluptatibus,
+                esse
+                labore soluta corporis nam porro accusamus aut iusto! Alias obcaecati inventore dolore ipsa repudiandae
+                nam!
+            </div>
+        </div>
+    </div>
+    <div class="department_cards" id="General">
+        <div class="department_heading">
+            <h1>General</h1>
+        </div>
+        <div class="deparment_secondary_card" id="general">
+            <div class="secondcard_image-size">
+                <img src="image/hm14.jpeg" alt="">
+            </div>
+            <div class="department_content">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia in natus perspiciatis hic cumque minus
+                odit tenetur nostrum quas at consectetur ad obcaecati libero eius nemo, ullam harum doloribus sapiente
+                rerum
+                quisquam tempore. Provident error corporis ea officiis asperiores, laboriosam praesentium? Animi ab sed
+                dignissimos ullam non commodi delectus, excepturi necessitatibus labore neque provident quis nulla
+                voluptatem ipsum aut nemo corrupti perferendis vitae. Quis perspiciatis dolore dicta? Ratione provident
+                nemo
+                dolor? Ea voluptates a ab maiores dolor facilis inventore architecto veritatis vitae cum voluptatibus,
+                esse
+                labore soluta corporis nam porro accusamus aut iusto! Alias obcaecati inventore dolore ipsa repudiandae
+                nam!
+            </div>
+        </div>
+    </div>
+    <div class="department_cards" id="Pediatrician">
+        <div class="department_heading">
+            <h1>Pediatrician</h1>
+        </div>
+        <div class="deparment_secondary_card">
+            <div class="secondcard_image-size">
+                <img src="image/hm12.jpeg" alt="">
+            </div>
+            <div class="department_content">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia in natus perspiciatis hic cumque minus
+                odit tenetur nostrum quas at consectetur ad obcaecati libero eius nemo, ullam harum doloribus sapiente
+                rerum
+                quisquam tempore. Provident error corporis ea officiis asperiores, laboriosam praesentium? Animi ab sed
+                dignissimos ullam non commodi delectus, excepturi necessitatibus labore neque provident quis nulla
+                voluptatem ipsum aut nemo corrupti perferendis vitae. Quis perspiciatis dolore dicta? Ratione provident
+                nemo
+                dolor? Ea voluptates a ab maiores dolor facilis inventore architecto veritatis vitae cum voluptatibus,
+                esse
+                labore soluta corporis nam porro accusamus aut iusto! Alias obcaecati inventore dolore ipsa repudiandae
+                nam!
+            </div>
+        </div>
+    </div>
+    <div class="department_cards" id="Neurology">
+        <div class="department_heading">
+            <h1>Neurology</h1>
+        </div>
+        <div class="deparment_secondary_card" id="neurology">
+            <div class="secondcard_image-size">
+                <img src="image/hm10.jpeg" alt="">
+            </div>
+            <div class="department_content">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia in natus perspiciatis hic cumque minus
+                odit tenetur nostrum quas at consectetur ad obcaecati libero eius nemo, ullam harum doloribus sapiente
+                rerum
+                quisquam tempore. Provident error corporis ea officiis asperiores, laboriosam praesentium? Animi ab sed
+                dignissimos ullam non commodi delectus, excepturi necessitatibus labore neque provident quis nulla
+                voluptatem ipsum aut nemo corrupti perferendis vitae. Quis perspiciatis dolore dicta? Ratione provident
+                nemo
+                dolor? Ea voluptates a ab maiores dolor facilis inventore architecto veritatis vitae cum voluptatibus,
+                esse
+                labore soluta corporis nam porro accusamus aut iusto! Alias obcaecati inventore dolore ipsa repudiandae
+                nam!
+            </div>
+        </div>
+    </div>
+    <div class="contactus">
+        <div class="contactheading">
+            <h2>Leave us a Message</h2>
+        </div>
+        <div class="contactform">
+            <form action="feedback.php" method="post">
+                <div class="contactpersonal">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" required>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required>
+                    <label for="contact">Contact</label>
+                    <input type="number" name="contact" id="contact" required>
+                </div>
+                <div class="contactmessage">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" cols="30" rows="20" required></textarea>
+                </div>
+                <div class="contactbtn">
+                    <button type="submit" name="contact_submit" class="submit_contact">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="secondlast">
+        <center><a href="#Home">&#8657;&nbsp;Top</a></center>
+    </div>
+    <div class="pagefooter" id="contactus">
+        <div class="pagefooterbox1">
+            <h1>Contact details</h1>
+            <br>
+            <table>
+                <tr>
+                    <td>contact no.</td>
+                    <td>xxx-xxx-xxxxx</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><a href="mailto:xxxx@gmail.com"></a>xxxxx@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Adress</td>
+                    <td>
+                        <address>xxxxxxxxxxxx<br>xxxxxxxx</address>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="pagefooterbox2">
+            <h1>Disclaimer</h1>
+            <br>
+            <p>This is a hospital appointment booking system project.
+                It is a third year capstone project of our group for the Academic year 2022 - 2023
+                the project is build using Html , css , PHP</p>
+            <br>
+            <p>Team Members of our Group :-</p>
+            <div style="text-align: left;">
+                <ol>
+                    <li>Shreyas Surve</li>
+                    <li>Shashikant Surve</li>
+                    <li>Prabhat Singh</li>
+                    <li>Altaf Jhamkhandi</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-    </html>
-
-  
+</html>
